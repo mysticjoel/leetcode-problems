@@ -1,4 +1,4 @@
-class Solution:
+'''class Solution:
     def decrypt(self, code: List[int], k: int) -> List[int]:
         if k==0:
             return [0]*len(code)
@@ -29,4 +29,39 @@ class Solution:
                     vnew[i]=sums
 
             return vnew
+        return new'''
+
+class Solution:
+    def decrypt(self, code: List[int], k: int) -> List[int]:
+        n = len(code)
+        new = [0]* n
+        if k==0:
+            return new
+        left =0
+        window = []
+        if k>0:
+            cursum = 0
+            for right in range(n+k):
+                window.append(code[right%n])
+                cursum+=code[right%n]
+                if right-left+1>k:
+                    cursum-=code[left%n]
+                    #print(cursum,left-1,(left-1)%n)
+
+                    new[(left)%n] = cursum
+                    #print(new)
+                    window.pop(0)
+                    left=(left+1)%n
+        elif k<0:
+            cursum = 0
+            for right in range(n+abs(k)):
+                window.append(code[right%n])
+                cursum+=code[right%n]
+                if right-left+1>abs(k):
+                    cursum-=code[left%n]
+                    #print(cursum,right+1,(right+1)%n)
+                    new[(right+1)%n] = cursum
+                    #print(new)
+                    window.pop(0)
+                    left=(left+1)%n
         return new
