@@ -33,23 +33,23 @@ class Solution:
             while str1[i]=='R':
                 if right<i:
                     return False
-                print(right)
+              #  print(right)
                 if str2[right]!='R':
                     right-=1
                 else:
                     #right-=1
                     break
-                print(right,str2[right])
+              #  print(right,str2[right])
             while str1[i]=='L': 
                 if left>i:
                     return False
-                print(left)
+              #  print(left)
                 if str2[left]!='L':
                     left+=1
                 else:
                     #left+=1
                     break
-                print(left,str2[left])
+               # print(left,str2[left])
 
         return True
         #for i in range(len(str2)):
