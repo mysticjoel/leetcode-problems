@@ -15,7 +15,7 @@ class Solution:
                     #stack.pop()
             else:
                 stack.append(i)
-            print(stack)
+            #print(stack)
         #if len(stack)>1:
             #stack.pop()
         return "/"+"/".join(stack)
