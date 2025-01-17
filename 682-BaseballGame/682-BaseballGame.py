@@ -11,5 +11,4 @@ class Solution:
                 stack.append( stack[-1] + stack[-2])
             else:
                 stack.append(int(i))
-            print(stack)
         return sum(stack)
