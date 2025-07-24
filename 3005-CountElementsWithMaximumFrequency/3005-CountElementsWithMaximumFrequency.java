@@ -1,4 +1,4 @@
-// Last updated: 7/24/2025, 5:58:19 PM
+// Last updated: 7/24/2025, 5:58:32 PM
 class Solution {
     public int maxFrequencyElements(int[] nums) {
         HashMap<Integer,Integer> hashmap = new HashMap<>();
@@ -7,7 +7,7 @@ class Solution {
         }
         int count=0; 
         int maxval=Integer.MIN_VALUE;
-        System.out.println("Frequencies: " + hashmap);
+        //System.out.println("Frequencies: " + hashmap);
         for(int i:hashmap.values()){
             if(i>maxval){
                 maxval=i;
